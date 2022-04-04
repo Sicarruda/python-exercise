@@ -17,3 +17,18 @@ para o sindicato, faça um programa que nos dê:
 
     Obs.: Salário Bruto - Descontos = Salário Líquido.'''
     
+
+
+salario_hora = int(input('Digite quanto você ganha por hora '))
+hora_trabalho = int(input('Digite quantas horas você trabalha por dia '))
+
+
+def calculadora_salario(salario_hora, hora_trabalho):
+    total_salario = (salario_hora * hora_trabalho) * (5 * 4)
+    total_liquido = total_salario - ((total_salario * 24) / 100)
+    ir = (total_salario * 11) / 100
+    inss = (total_salario * 8) / 100
+    sindicato = (total_salario * 5) / 100
+    return f"Salário Bruto : R${total_salario} - IR (11%) : R${ir} - INSS (8%) : R${inss} - Sindicato ( 5%) : R${sindicato} = Salário Liquido : R${total_liquido}"
+
+print(calculadora_salario(salario_hora, hora_trabalho))
