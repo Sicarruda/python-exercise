@@ -15,29 +15,32 @@ litros, que custam R$ 80,00 ou em galões de 3,6 litros, que custam R$ 25,00.
 
 metros_quadrados = float(input('Digite o numero em m² da area: '))
 
-def calculadora_tinta(area):
-	balde_18 = 108 
-	balde_3 = 21.6 # balde tem 3,6 litros na vdd
-	baldes_menor_custo = {
-		"balde_18":0, 
-		"balde_3":0,
-		"valor_18": 80,
-		"valor_3": 25,
-		}
-	qnt_baldes_18 = area / balde_18
-	qnt_baldes_3 = area / balde_3
-	count_area = area * 1.1
-	count = count_area
-	while count_area > 0:
-		if count <= 64.8:
-			baldes_menor_custo["balde_3"] = math.ceil(count / balde_3)
-			count_area = 0
-		count = count - balde_18
-		if count > 0:
-			baldes_menor_custo["balde_18"] = baldes_menor_custo["balde_18"] + 1
 
-	print(f"comprar apenas latas de 18 litros R${math.ceil(qnt_baldes_18) * baldes_menor_custo['valor_18']}")
-	print(f"comprar apenas latas de 3,6 litros R${math.ceil(qnt_baldes_3) * baldes_menor_custo['valor_3']}")
-	print(f"Mistura de galões pelo menor preço: latas 18 litros {baldes_menor_custo['balde_18']}, latas 3,6 litros {baldes_menor_custo['balde_3']} totalizando R${(baldes_menor_custo['balde_18'] * baldes_menor_custo['valor_18']) + (baldes_menor_custo['balde_3'] * baldes_menor_custo['valor_3']) }")
+def calculadora_tinta(area):
+	balde_18_litros = 108 
+	balde_3_6_litros = 21.6 
+	baldes_menor_custo = {
+		"balde_18_litros":0, 
+		"balde_3_6_litros":0,
+		"valor_balde_18_litros": 80,
+		"valor_balde_3_6_litros": 25,
+		}
+	qnt_baldes_18_litros = area / balde_18_litros
+	qnt_baldes_3_6_litros = area / balde_3_6_litros
+	area_mais_10 = area * 1.1
+	area_regresiva = area_mais_10
+	while area_mais_10 > 0:
+		if area_regresiva <= 64.8:
+			baldes_menor_custo["balde_3_6_litros"] = math.ceil(area_regresiva / balde_3_6_litros)
+			area_mais_10 = 0
+
+		area_regresiva = area_regresiva - balde_18_litros
+
+		if area_regresiva >= 0:
+			baldes_menor_custo["balde_18_litros"] = baldes_menor_custo["balde_18_litros"] + 1
+
+	print(f"comprar apenas latas de 18 litros R${math.ceil(qnt_baldes_18_litros) * baldes_menor_custo['valor_balde_18_litros']}")
+	print(f"comprar apenas latas de 3,6 litros R${math.ceil(qnt_baldes_3_6_litros) * baldes_menor_custo['valor_balde_3_6_litros']}")
+	print(f"Mistura de galões pelo menor preço: latas 18 litros {baldes_menor_custo['balde_18_litros']}, latas 3,6 litros {baldes_menor_custo['balde_3_6_litros']} totalizando R${(baldes_menor_custo['babalde_18_litroslde_18'] * baldes_menor_custo['valor_balde_18_litros']) + (baldes_menor_custo['babalde_3_6_litroslde_3'] * baldes_menor_custo['valor_balde_3_6_litros']) }")
 
 calculadora_tinta(metros_quadrados)
