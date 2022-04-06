@@ -24,8 +24,7 @@ MENOR_AREA_DE_CUSTO = int(VALOR_BALDE_18_000_MILILITROS / VALOR_BALDE_3_600_MILI
 def calculadora_tinta_balde_18_000_litros(area):
     qnt_baldes_18_litros = math.ceil(area / COBERTURA_BALDE_18_000_MILILITROS)
     valor_total = qnt_baldes_18_litros * VALOR_BALDE_18_000_MILILITROS
-    valor_e_qnts = [valor_total, qnt_baldes_18_litros]
-    return valor_e_qnts
+    return [valor_total, qnt_baldes_18_litros]
 
 
 def calculadora_tinta_balde_3_600_litros(area):
