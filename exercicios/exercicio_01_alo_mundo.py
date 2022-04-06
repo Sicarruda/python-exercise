@@ -5,3 +5,5 @@
 def print_mensagem():
     a = 'Alo mundo!'
     return a
+
+print_mensagem()

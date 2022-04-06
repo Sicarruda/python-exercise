@@ -7,5 +7,6 @@ def conversor(metros):
 
 if __name__ == '__main__':
 	metros = int(input('insira a metragem: '))
+	conversor(metros)
 
 	

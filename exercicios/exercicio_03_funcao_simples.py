@@ -8,3 +8,4 @@ def input_2_num(a, b):
 if __name__ == '__main__':
     a = int(input('Digite um numero numero '))
     b = int(input('Digite outro numero numero '))
+    input_2_num(a,b)

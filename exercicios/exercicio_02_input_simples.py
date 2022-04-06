@@ -7,3 +7,4 @@ def print_mensagem_usuario(valor):
 
 if __name__ == '__main__':
     numero = int(input('Digite um numero: '))
+    print_mensagem_usuario(numero)

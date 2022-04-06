@@ -13,4 +13,4 @@ if __name__ == "__main__":
     nota3 = int(input('Terceira nota: '))
     nota4 = int(input('Quarta nota: '))
 
-    print(media_notas(nota1, nota2, nota3, nota4))
+    media_notas(nota1, nota2, nota3, nota4)
