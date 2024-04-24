@@ -3,10 +3,12 @@ from datetime import datetime
 
 
 bubble_sort_test_list = [10,100,1000,10000]
+
 # dd/mm/YY H:M:S:f
 format_date = "%d/%m/%Y %H:%M:%S:%f"
 
-# cria o array 
+
+# cria o array
 def create_unordered_array(array_len):
     unordered_array = []
     created_array = True
@@ -14,44 +16,64 @@ def create_unordered_array(array_len):
     while created_array:
         item = random.randrange(1, array_len)
         unordered_array.append(item)
-        
+
         if len(unordered_array) == array_len:
             created_array = False
 
-    # random.shuffle(unordered_array) embaralha um array já existente
+    # random.shuffle(unordered_array) # embaralha um array já existente
 
     return unordered_array
+
 
 # ordena o array
 def bubble_sort(array):
     array_length = len(array)
-    
+
     while array_length > 1:
 
         for i in range(array_length):
 
-            if (i+1) < array_length:
+            if (i + 1) < array_length:
 
-                if array[i] > array[i+1]:
+                if array[i] > array[i + 1]:
                     bigger = array[i]
-                    array[i] = array[i+1]
-                    array[i+1] = bigger
+                    array[i] = array[i + 1]
+                    array[i + 1] = bigger
 
             else:
                 array_length -= 1
                 continue
 
-# exibe a diferença entre o tempo de inicio e o fim da execução 
+    return array
+
+
+# exibe a diferença entre o tempo de inicio e o fim da execução
 def time_diff(start, finish, array):
     diff = finish - start
-    msg = f'Array com {array} elementos. Tempo de execução {diff}'
+    msg = f"Array com {array} elementos. Tempo de execução {diff}"
 
     return msg
+
 
 # array_original = create_unordered_array(100)
 # # print("ARRAY ORIGINAL",array_original)
 # bubble_sort(array_original)
 # # print("ARRAY ORDENADO",array_original)
+
+
+def test_ordenation(array):
+    wrong_array = []
+
+    for item in range(len(array)):
+        if item > 0 and array[item] < array[item - 1]:
+            wrong_array.append(array[item])
+        if item < len(array)-1 and array[item] > array[item + 1]:
+            wrong_array.append(array[item])
+
+    if wrong_array:
+        print("CÓDIGO ERRADO!!  ARRAY DE ERROS : ", wrong_array)
+    else:
+        print(f"TESTE EXECUTADO COM SUCESSO: ARRAY DE {len(array)} ELEMENTOS")
 
 
 def compare_ordering_time(list_comparation):
@@ -63,28 +85,20 @@ def compare_ordering_time(list_comparation):
         format_string = time_start.strftime(format_date)
         print("Data inicio = ", format_string)
 
-        bubble_sort(list_unordered)
+        array_ordered = bubble_sort(list_unordered)
 
         time_finish = datetime.now()
         format_string_2 = time_finish.strftime(format_date)
-        print("Data fim = ",format_string_2)
+        print("Data fim = ", format_string_2)
 
         print(time_diff(time_start, time_finish, item))
-    
+
+        test_ordenation(bubble_sort(array_ordered))
+
 
 compare_ordering_time(bubble_sort_test_list)
 
-def test_ordenation(array):
-    pass
+# test_ordenation([1,2,3,4,5,6,7,8,9])
 
-
-
-
-
-# tempo em ms -ok
-# varias ordenações com 10, 100, 1000, 10000 e 1000000 elementos e imprimir o tempo que demorou cada uma. Comparar a evolução do tempo com o tamanho do array - ok 
-# usar valores aleatórios no array - ok
-# melhorar nomes das variaveis - ok
-# Tentar implementar outra copia dessa função sem usar range! Tenta manipular os indices dentro do for - ok
-# como funciona o range? ele é pesado pra gerar uma sequencia de 1 trilhão?
-# função para verificar se um array está ordenado 
+# TODO como funciona o range? ele é pesado pra gerar uma sequencia de 1 trilhão?
+# TODO implementar list comprehesion no bubble sort e comparar com for convencinal
