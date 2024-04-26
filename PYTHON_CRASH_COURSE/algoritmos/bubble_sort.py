@@ -2,7 +2,7 @@ import random
 from datetime import datetime
 
 
-bubble_sort_test_list = [10,100,1000,10000]
+bubble_sort_test_list = [10000]
 
 # dd/mm/YY H:M:S:f
 format_date = "%d/%m/%Y %H:%M:%S:%f"
@@ -23,6 +23,25 @@ def create_unordered_array(array_len):
     # random.shuffle(unordered_array) # embaralha um array já existente
 
     return unordered_array
+
+
+def bubble_sort_list_comprehension(array):
+    [
+        [
+            # remover o elemento na posição j da lista e, em seguida, inseri-lo na próxima posição (j + 1).
+            array.insert(j + 1, array.pop(j))
+            for j in range(i) if array[j] > array[j + 1]
+            ]
+
+        
+        # o range(len(array) - 1, 0, -1) gera uma sequência de números inteiros começando do 
+        # penúltimo índice do array, decrementando 1 a cada iteração, até o primeiro índice (0).
+           
+        for i in range(len(array) - 1, 0, -1)
+        
+    ]
+
+    return array
 
 
 # ordena o array
@@ -67,7 +86,7 @@ def test_ordenation(array):
     for item in range(len(array)):
         if item > 0 and array[item] < array[item - 1]:
             wrong_array.append(array[item])
-        if item < len(array)-1 and array[item] > array[item + 1]:
+        if item < len(array) - 1 and array[item] > array[item + 1]:
             wrong_array.append(array[item])
 
     if wrong_array:
@@ -85,7 +104,8 @@ def compare_ordering_time(list_comparation):
         format_string = time_start.strftime(format_date)
         print("Data inicio = ", format_string)
 
-        array_ordered = bubble_sort(list_unordered)
+        array_ordered = bubble_sort_list_comprehension(list_unordered)
+        # array_ordered=bubble_sort(list_unordered)
 
         time_finish = datetime.now()
         format_string_2 = time_finish.strftime(format_date)
@@ -97,6 +117,8 @@ def compare_ordering_time(list_comparation):
 
 
 compare_ordering_time(bubble_sort_test_list)
+
+# print(bubble_sort_list_comprehension([3, 6, 5, 8, 9, 6, 4, 8, 7, 1, 2, 6]))
 
 # test_ordenation([1,2,3,4,5,6,7,8,9])
 
