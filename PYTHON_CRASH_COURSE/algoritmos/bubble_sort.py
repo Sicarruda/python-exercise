@@ -7,7 +7,6 @@ bubble_sort_test_list = [10000]
 # dd/mm/YY H:M:S:f
 format_date = "%d/%m/%Y %H:%M:%S:%f"
 
-
 # cria o array
 def create_unordered_array(array_len):
     unordered_array = []
@@ -23,7 +22,6 @@ def create_unordered_array(array_len):
     # random.shuffle(unordered_array) # embaralha um array já existente
 
     return unordered_array
-
 
 def bubble_sort_list_comprehension(array):
     [
@@ -42,7 +40,6 @@ def bubble_sort_list_comprehension(array):
     ]
 
     return array
-
 
 # ordena o array
 def bubble_sort(array):
@@ -65,7 +62,6 @@ def bubble_sort(array):
 
     return array
 
-
 # exibe a diferença entre o tempo de inicio e o fim da execução
 def time_diff(start, finish, array):
     diff = finish - start
@@ -73,12 +69,10 @@ def time_diff(start, finish, array):
 
     return msg
 
-
 # array_original = create_unordered_array(100)
 # # print("ARRAY ORIGINAL",array_original)
 # bubble_sort(array_original)
 # # print("ARRAY ORDENADO",array_original)
-
 
 def test_ordenation(array):
     wrong_array = []
@@ -93,7 +87,6 @@ def test_ordenation(array):
         print("CÓDIGO ERRADO!!  ARRAY DE ERROS : ", wrong_array)
     else:
         print(f"TESTE EXECUTADO COM SUCESSO: ARRAY DE {len(array)} ELEMENTOS")
-
 
 def compare_ordering_time(list_comparation):
     for item in list_comparation:
@@ -115,7 +108,6 @@ def compare_ordering_time(list_comparation):
 
         test_ordenation(bubble_sort(array_ordered))
 
-
 compare_ordering_time(bubble_sort_test_list)
 
 # print(bubble_sort_list_comprehension([3, 6, 5, 8, 9, 6, 4, 8, 7, 1, 2, 6]))
@@ -123,4 +115,3 @@ compare_ordering_time(bubble_sort_test_list)
 # test_ordenation([1,2,3,4,5,6,7,8,9])
 
 # TODO como funciona o range? ele é pesado pra gerar uma sequencia de 1 trilhão?
-# TODO implementar list comprehesion no bubble sort e comparar com for convencinal
