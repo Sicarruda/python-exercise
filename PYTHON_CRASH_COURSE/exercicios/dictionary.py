@@ -39,4 +39,3 @@ for item in dict_2.values():
 for item in set(dict_3.values()):
     print(f"{item}")
 # When you see braces but no key-value pairs, you’re probably looking at a set.
-
