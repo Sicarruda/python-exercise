@@ -8,4 +8,3 @@ def eco(msg):
     print(f'{msg}, {list_msg[-1]}, {list_msg[-1]}, {msg[-1]}')
 
 eco(msg)
-

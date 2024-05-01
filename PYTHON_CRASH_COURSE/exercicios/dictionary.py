@@ -28,6 +28,7 @@ for key, value in dict_2.items():
 # ambos os codigos retornam o mesmo resultado. Por padrão o Python sempre roda as chaves em um for
 for key in dict_2:
     print(key)
+    
 for key in dict_2.keys():
     print(key)
 
@@ -38,4 +39,3 @@ for item in dict_2.values():
 for item in set(dict_3.values()):
     print(f"{item}")
 # When you see braces but no key-value pairs, you’re probably looking at a set.
-
