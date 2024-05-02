@@ -6,10 +6,10 @@ import json
 # o arquivo criado é sobrescrito
 
 numbers = [2, 3, 5, 6, 8, 10]
+
 # path = Path("numbers.json")
 # contents = json.dumps(numbers)
 # path.write_text(contents)
-
 
 # path = Path('numbers.json')
 # contents = path.read_text()
@@ -17,14 +17,14 @@ numbers = [2, 3, 5, 6, 8, 10]
 # print(numbers)
 
 
-class Json_crud:
+class Json_User_Crud:
     def __init__(self, username):
         self.user_information = {}
         self.user_information["username"] = username
-        self.path = Path(f'{username}.json')
+        self.path = Path(f"{username}.json")
 
     def add_user_information(self, **information):
-        if not self.path.exists(): 
+        if not self.path.exists():
             for key in information.keys():
                 self.user_information[key] = information[key]
 
@@ -32,19 +32,14 @@ class Json_crud:
 
     def read_user_information(self, *information):
         permitted_information_list = [
-            "name",
-            "last_name",
-            "age",
-            "username",
-            "pet",
-            "job",
-            "education",
-            "gender",
-            "email",
+            "Full_name",
+            "Date_of_birth",
+            "Gender",
+            "Email_address",
         ]
         permitted_information = {}
-  
-        json_user_information= json.loads(self.path.read_text())
+
+        json_user_information = json.loads(self.path.read_text())
 
         if information:
             for item in information:
@@ -53,16 +48,50 @@ class Json_crud:
         else:
             for item in permitted_information_list:
                 permitted_information[item] = json_user_information[item]
-        
+
         return permitted_information
 
-    def updated_user_infomation(self, username, *information,):
+    def updated_user_infomation(self, **information):
         if self.path.exists():
+            contents = json.loads(self.path.read_text())
+
             for key in information.keys():
-                if key in self.user_information:
-                    self.user_information[key] = information[key]
-    
-    def delete_user_information(self, *infomation):
-        for key in infomation.keys():
-            if key in self.user_information:
-                self.user_information[key] = ""
+                if key in contents:
+                    contents[key] = information[key]
+
+            self.path.write_text(json.dumps(contents))
+
+    def delete_user_information(self, **infomation):
+        if self.path.exists():
+            contents = json.loads(self.path.read_text())
+
+            for key in infomation.keys():
+                if key in contents and key in self.user_information:
+                    self.user_information[key] = ""
+                    contents[key] = ""
+
+            self.path.write_text(json.dumps(contents))
+
+
+user_1 = Json_User_Crud("johndoe123")
+
+user_1.add_user_information(
+    Full_name="John Doe",
+    Date_of_birth="1985-07-15",
+    Gender="Male",
+    Email_address="john.doe@example.com",
+    Phone_number="+1234567890",
+    Physical_address="123 Main Street, Cityville, USA",
+    Identification_document="Driver's License - 123456789",
+    Username="johndoe123",
+    Password="hashed_password_here",
+    Credit_card_details="**** **** **** 1234",
+    Billing_address="123 Billing Lane, Cityville, USA",
+    Transaction_history="2024-04-29: $50.00 at Store A",
+)
+
+print(user_1.read_user_information())
+
+user_1.updated_user_infomation(Date_of_birth="1999-07-15",Full_name='Jonathan Doe')
+
+print(user_1.read_user_information())
