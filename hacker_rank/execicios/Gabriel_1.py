@@ -17,3 +17,5 @@ print(palindromo_str(num1))
 print(palindromo_str(num2))
 
 
+def palindromo_sem_str(num):
+    pass
