@@ -1,6 +1,6 @@
 from datetime import datetime
 from unordered_arrays import *
-from testes import *
+from algoritmos.test_ordenation import *
 
 
 # dd/mm/YY H:M:S:f
