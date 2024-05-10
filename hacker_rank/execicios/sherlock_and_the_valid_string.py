@@ -25,7 +25,7 @@ def isValid(s):
             
     if len(values_frequence) > 2:
         return "NO"
-        
+    
     count = 0
     
     for key, value in values_frequence.items():

@@ -15,9 +15,17 @@ def minimumSwaps(arr):
 
     return count
 
-
-def minimumSwaps_sem_for(arr):
+# Código otimizado pelo Chat-GPT 
+# o arr.index é o responsavel por aumentar o tempo de execução, usamos um dict com list comprehesion para gravar os valores e index e assim a busca fica mais rapida.
+def minimumSwaps(arr):
     count = 0
+    index_dict = {value: index for index, value in enumerate(arr)}
 
-    list(filter(lambda x: True if print(x) is None else False, arr))
-    pair_list = [item for item in len_arr if i + 1 != arr[i]]
+    for i in range(len(arr)):
+        if i + 1 != arr[i]:
+            index = index_dict[i + 1]
+            arr[i], arr[index] = arr[index], arr[i]
+            index_dict[arr[i]], index_dict[arr[index]] = i, index
+            count += 1
+            
+    return count
