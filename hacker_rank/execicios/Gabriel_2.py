@@ -3,41 +3,48 @@
 """
 
 def devolve_troco(valor,pag):
-    subt = round(valor - pag, 2)
 
-    notas_moedas = {
-        "100":0,
-        "50":0,
-        "20":0,
-        "10":0,
-        "5":0,
-        "2":0,
-        "1":0,
-        "0.5":0,
-        "0.25":0,
-        "0.1":0,
-        "0.05":0,
-        "0.01":0
-    }
+    if valor > pag:
 
-    keys_as_int = [float(key) for key in notas_moedas.keys()]
+        subt = round(valor - pag, 2)
+        notas_moedas = {
+            "100":0,
+            "50":0,
+            "20":0,
+            "10":0,
+            "5":0,
+            "2":0,
+            "1":0,
+            "0.5":0,
+            "0.25":0,
+            "0.1":0,
+            "0.05":0,
+            "0.01":0
+        }
 
-    while subt > 0:
+        keys_int = [float(key) for key in notas_moedas.keys()]
 
-        for i in keys_as_int:
+        while subt > 0:
 
-            if i <= subt:
-                subt = round(subt - i, 2)
+            for i in keys_int:
 
-                if int(i) > 0: 
-                    notas_moedas[str(int(i))] += 1 
-                else:
-                    notas_moedas[str(i)] += 1
-                
-                break
+                if i <= subt:
+                    subt = round(subt - i, 2)
 
-    return notas_moedas
+                    if int(i) > 0: 
+                        notas_moedas[str(int(i))] += 1 
+                    else:
+                        notas_moedas[str(i)] += 1
+                    
+                    break
+
+        return notas_moedas
+    
+    else:
+        msg = "Valor de pagamento insuficiente"
+
+        return msg
 
 
-print(devolve_troco(300,278))
+print(devolve_troco(299,278))
 
