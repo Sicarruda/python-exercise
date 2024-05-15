@@ -30,8 +30,7 @@ list_places = [
 def odd_and_pair_numbers(list):
     pair_list = [item for item in list if (item % 2) == 0]
     odd_list = [item for item in list if not (item % 2) == 0]
-    print(pair_list)
-    print(odd_list)
+    return pair_list, odd_list
 
 
 # odd_and_pair_numbers(list_numbers)
