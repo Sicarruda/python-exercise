@@ -61,3 +61,7 @@ def makeAnagram(a, b):
 
 
 makeAnagram("cde", "abc")
+
+
+# TODO fazer função com for repetido em makeAnagram
+# TODO fazer teste unitario para execicio 
