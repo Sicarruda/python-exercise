@@ -1,4 +1,4 @@
-def test_ordenation(array):
+def ordering_check(array):
     wrong_array = []
 
     for item in range(len(array)):

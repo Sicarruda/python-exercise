@@ -31,4 +31,4 @@ def compare_ordering_time(list_comparation, algorithm):
 
         print(time_diff(time_start, time_finish, item))
         
-        test_ordenation(array_ordered)
+        ordering_check(array_ordered)

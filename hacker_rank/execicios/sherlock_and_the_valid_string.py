@@ -37,3 +37,23 @@ def isValid(s):
         return "NO"
         
     return "YES"
+
+
+def isValid2(s):
+    character_occurrences = {}
+    
+    for character in list(s):
+        character_occurrences[character] = 1 if character not in character_occurrences else character_occurrences[character] + 1
+       
+    base_occurence = character_occurrences.values()[0]
+    adjusts_left = 1
+
+    for character_occurrence in character_occurrences:
+
+        occurence_diff = character_occurrence - base_occurence 
+        if occurence_diff > 1:
+            return "NO"
+        elif occurence_diff == 1 and adjusts_left > 0:
+            adjusts_left = adjusts_left - 1
+        
+
