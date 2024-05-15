@@ -30,6 +30,7 @@ list_places = [
 def odd_and_pair_numbers(list):
     pair_list = [item for item in list if (item % 2) == 0]
     odd_list = [item for item in list if not (item % 2) == 0]
+    
     return pair_list, odd_list
 
 
@@ -38,7 +39,8 @@ def odd_and_pair_numbers(list):
 
 def places_with_specific_letter(list, letter):
     places_list = [item for item in list if letter in item.lower()]
-    print(letter, places_list)
+
+    return letter, places_list
 
 
 # places_with_specific_letter(list_places, "p")
@@ -46,11 +48,11 @@ def places_with_specific_letter(list, letter):
 # places_with_specific_letter(list_places, "a")
 
 
-def capital_names(list):
+def capital_title_names(list):
     capitalize_names_list = [item.capitalize() for item in list]
     title_names_list = [item.title() for item in list]
-    print("capitalize ", capitalize_names_list)
-    print("title ", title_names_list)
+
+    return capitalize_names_list, title_names_list
 
 
-# capital_names(list_names)
+# capital_title_names(list_names)
