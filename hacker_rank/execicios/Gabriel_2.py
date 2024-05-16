@@ -47,6 +47,8 @@ def devolve_troco(pagamento,compra):
 
     except ValueError as e:
         return str(e)
+    except TypeError:
+        return "Somente valores numéricos"
 
-print(devolve_troco(458.52,278.78))
+print(devolve_troco("9.12",10))
 
