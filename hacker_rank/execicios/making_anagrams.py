@@ -7,8 +7,9 @@
 #  1. STRING a
 #  2. STRING b
 
+# TODO fazer teste unitario para execicio 
 
-def create_different_characters_list(dict_a, dict_b):
+def create_list_excess_characters(dict_a, dict_b):
     different_characters = {}
 
     for character_a, value_a in dict_a.items():
@@ -33,35 +34,32 @@ def create_different_characters_list(dict_a, dict_b):
 
     return different_characters
 
+def create_character_dict(list):
+    character_dict = {}
+
+    for character in list:
+        character_dict[character] = (
+            1 if character not in character_dict else character_dict[character] + 1
+        )
+    
+    return character_dict
 
 def makeAnagram(a, b):
 
     characters_a = list(a)
     characters_b = list(b)
 
-    dict_str_a = {}
-    dict_str_b = {}
-    sum_difference = 0
+    dict_str_a = create_character_dict(characters_a)
+    dict_str_b = create_character_dict(characters_b)
 
-    for character in characters_a:
-        dict_str_a[character] = (
-            1 if character not in dict_str_a else dict_str_a[character] + 1
-        )
+    sum_excess = 0
 
-    for character in characters_b:
-        dict_str_b[character] = (
-            1 if character not in dict_str_b else dict_str_b[character] + 1
-        )
+    excess_characters = create_list_excess_characters(dict_str_a, dict_str_b)
 
-    different_characters = create_different_characters_list(dict_str_a, dict_str_b)
+    sum_excess = sum(excess_characters.values())
 
-    sum_difference = sum(different_characters.values())
-
-    return sum_difference
+    return sum_excess
 
 
-makeAnagram("cde", "abc")
+print(makeAnagram("cde", "abc"))
 
-
-# TODO fazer função com for repetido em makeAnagram
-# TODO fazer teste unitario para execicio 
