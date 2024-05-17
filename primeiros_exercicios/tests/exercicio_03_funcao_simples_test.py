@@ -1,5 +1,5 @@
 import pytest
-from exercicios.exercicio_03_funcao_simples import soma_2_num
+from primeiros_exercicios.exercicios.exercicio_03_funcao_simples import soma_2_num
 
 def test_verifica_se_soma_correta():
     soma_int = [1, 1, 2]

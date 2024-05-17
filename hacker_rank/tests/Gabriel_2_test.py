@@ -1,4 +1,4 @@
-from execicios.Gabriel_2 import *
+from hacker_rank.execicios.Gabriel_2 import *
 
 valores_testes = [(0, 0), (50, 20), (32.25, 21.10), (50, 48.34), (9.12, 10),("1",5),("2","0,25")]
 respostas_trocos = [

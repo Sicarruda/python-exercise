@@ -1,4 +1,4 @@
-from exercicios.exercicio_06_area_circulo import calcula_area_circulo
+from primeiros_exercicios.exercicios.exercicio_06_area_circulo import calcula_area_circulo
 
 def test_verifica_area_de_um_circulo():
     raio = 5

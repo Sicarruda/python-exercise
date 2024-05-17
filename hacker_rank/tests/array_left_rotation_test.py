@@ -1,8 +1,8 @@
-from execicios.array_left_rotation import *
+from hacker_rank.execicios.array_left_rotation import *
 
 
 arr = [1, 2, 3, 4, 5]
-num_list = [2, 0, 10]
+num_list = [2, 0, 8]
 arr_change = [3, 4, 5, 1, 2]
 
 
