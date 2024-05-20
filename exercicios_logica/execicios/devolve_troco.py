@@ -4,8 +4,10 @@
 
 def devolve_troco(pagamento,compra):
     try:
-        if pagamento < compra:
+        if pagamento < compra or pagamento == 0:
             raise ValueError("Valor de pagamento insuficiente")
+        if compra == 0:
+            raise ValueError("Valor de compra insuficiente")
 
         troco = round(pagamento - compra, 2)
         total_troco = {}

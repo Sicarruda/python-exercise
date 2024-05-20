@@ -8,11 +8,16 @@
 #  2. INTEGER d
 
 def rotLeft(a, d):
+    print("INICIO",a, d)
     while d > 0:
+        print("WHILE",a, d)
         index = 0
         a.append(a[index])
         a.pop(index)
         d -= 1
         index += 1
         
+    print("RESULT",a, d)
     return a
+
+# print(rotLeft([1, 2, 3, 4, 5],2))
