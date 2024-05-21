@@ -1,4 +1,10 @@
-from time_comparer import *
+import sys
+import os
+print("1",sys.path)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+print("2",sys.path)
+from algoritmos.utils.time_comparer import *
+
 
 bubble_sort_test_list = [10, 100, 1000, 10000]
 

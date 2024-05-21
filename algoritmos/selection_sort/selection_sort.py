@@ -1,4 +1,4 @@
-from time_comparer import *
+from algoritmos.utils.time_comparer import *
 
 selection_sort_test_list = [10, 100, 1000]
 

@@ -1,7 +1,8 @@
 from datetime import datetime
-from unordered_arrays import *
-from algoritmos.test_ordenation import *
-
+import sys
+from algoritmos.utils.unordered_arrays import *
+from algoritmos.utils.ordenation_check import *
+print("3",sys.path)
 
 # dd/mm/YY H:M:S:f
 format_date = "%d/%m/%Y %H:%M:%S:%f"
