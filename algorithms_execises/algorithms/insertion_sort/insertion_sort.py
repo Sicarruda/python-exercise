@@ -1,8 +1,3 @@
-from algoritmos.utils.time_comparer import *
-
-insertion_sort_test_list = [10, 100, 1000, 10000]
-
-
 # ordena o array
 def insertion_sort(array):
 
@@ -27,6 +22,5 @@ def insertion_sort(array):
         control += 1
     return array
 
-compare_ordering_time(insertion_sort_test_list, insertion_sort)
 
 # TODO fazer insertion_sort com list compreension

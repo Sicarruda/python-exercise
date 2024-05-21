@@ -1,7 +1,3 @@
-from algoritmos.utils.time_comparer import *
-
-selection_sort_test_list = [10, 100, 1000]
-
 # ordena o array
 def selection_sort(array):
     len_array = len(array)
@@ -18,5 +14,3 @@ def selection_sort(array):
                     array[j] = bigger
 
     return array
-
-compare_ordering_time(selection_sort_test_list, selection_sort)

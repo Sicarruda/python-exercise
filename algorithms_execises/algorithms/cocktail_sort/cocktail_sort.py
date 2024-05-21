@@ -1,8 +1,3 @@
-from algoritmos.utils.time_comparer import *
-
-cocktail_sort_test_list = [10, 100, 1000,10000]
-
-
 def cocktail_sort(array):
     array_length = len(array)
 
@@ -36,4 +31,4 @@ def cocktail_sort(array):
 
     return array
 
-compare_ordering_time(cocktail_sort_test_list,cocktail_sort)
+

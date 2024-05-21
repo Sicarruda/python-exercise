@@ -1,14 +1,3 @@
-import sys
-import os
-print("1",sys.path)
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-print("2",sys.path)
-from algoritmos.utils.time_comparer import *
-
-
-bubble_sort_test_list = [10, 100, 1000, 10000]
-
-
 def bubble_sort_list_comprehension(array):
     [
         [
@@ -44,8 +33,5 @@ def bubble_sort(array):
                 continue
 
     return array
-
-compare_ordering_time(bubble_sort_test_list, bubble_sort)
-
 
 # TODO como funciona o range? ele é pesado pra gerar uma sequencia de 1 trilhão?
