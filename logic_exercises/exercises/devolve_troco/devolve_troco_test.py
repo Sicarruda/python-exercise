@@ -1,7 +1,6 @@
 import pytest
 
-from exercicios_logica.execicios.devolve_troco import *
-
+from devolve_troco import *
 
 def test_retorna_troco():
     assert devolve_troco(0, 0) == "Valor de pagamento insuficiente"
