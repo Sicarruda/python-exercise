@@ -31,8 +31,11 @@ def minimumBribes_novo(q):
     max_bribes = 2 
     
     for index in range(len(q)):
+        original_position = index+1
         
-        if q[index] - (index+1) > max_bribes:
+        x = q[index] - original_position
+        
+        if  x > max_bribes:
             print("Too chaotic")
             return
         
