@@ -1,4 +1,4 @@
-from primeiros_exercicios.exercicios.exercicio_04_media_simples.exercicio_04_media_simples import media_notas
+from exercicio_04_media_simples import media_notas
 
 def test_verifica_media_de_notas():
     n1 = 1
