@@ -1,6 +1,6 @@
 import pytest
 
-from exercicios_logica.execicios.palindrome import *
+from palindrome import *
 
 
 def test_is_palindromo_with_str():

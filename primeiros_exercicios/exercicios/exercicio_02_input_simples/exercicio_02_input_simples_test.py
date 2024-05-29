@@ -1,5 +1,5 @@
 import pytest
-from primeiros_exercicios.exercicios.exercicio_02_input_simples import formata_mensagem_usuario
+from exercicio_02_input_simples import formata_mensagem_usuario
 
 def test_exibe_mensagem_do_ususario_correta():
     assert formata_mensagem_usuario(5) == 'O numero informado foi 5'
