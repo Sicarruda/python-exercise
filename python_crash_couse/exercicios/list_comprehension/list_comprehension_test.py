@@ -2,7 +2,7 @@
 # import os
 import pytest
 
-from python_crash_couse.exercicios.list_comprehension import *
+from list_comprehension import *
 
 # # Obtém o diretório pai do diretório atual duas vezes para chegar ao diretório 'exercicios'
 # exercicios_dir = os.path.abspath(
