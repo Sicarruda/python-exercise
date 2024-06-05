@@ -7,24 +7,23 @@
 def miniMaxSum(arr):
     min_sum = 0
     max_sum = 0
-    bigger_num = 0
-    smaler_num = 0
+    bigger_num = arr[0]
+    smaler_num = arr[0]
+    new_arr = arr[:]
     
-    for num in arr:
+    for num in new_arr:
+
         if num > bigger_num:
             bigger_num = num
-            
-    smaler_num = bigger_num
-    
-    for num in arr:
+
         if num < smaler_num:
             smaler_num = num
-            
-    arr.remove(bigger_num)
-    arr.remove(smaler_num)
     
-    min_sum = sum(arr) + smaler_num
-    max_sum = sum(arr) + bigger_num
+    new_arr.remove(bigger_num)
+    new_arr.remove(smaler_num)
+    
+    min_sum = sum(new_arr) + smaler_num
+    max_sum = sum(new_arr) + bigger_num
     
     print(min_sum, max_sum)
 
