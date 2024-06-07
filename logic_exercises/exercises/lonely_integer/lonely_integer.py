@@ -10,7 +10,7 @@ def lonelyinteger(a):
     
     for item in a:
         
-        if item not in dict_numbers:
+        if item not in dict_numbers: # if dict_numbers[item] is Null:
             dict_numbers[item] = 1
         else:
             dict_numbers[item] += 1
