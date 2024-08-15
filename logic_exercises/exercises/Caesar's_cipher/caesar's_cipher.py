@@ -52,12 +52,10 @@ def caesarCipher(s, k):
 
     if k > 26:
         rotation = int(k % 26)
-
-    if k == 26:
-        rotation = 0
-
-    if k < 26:
+    elif k < 26:
         rotation = k
+    else:
+        rotation = 0
 
     if rotation:
         temp_list = []
@@ -74,25 +72,23 @@ def caesarCipher(s, k):
         for element in range(len(temp_list)):
             alphabet_rotated.append(temp_list[element])
             alphabet_upercase_rotated.append(temp_list_uppercase[element])
-            
+
     else:
         alphabet_rotated = alphabet
         alphabet_upercase_rotated = alphabet_upercase
 
     for char in range(len(s)):
 
-        if s[char] not in alphabet:
-
-            if s[char] not in alphabet_upercase:
-                new_str = new_str + s[char]
-
         if s[char] in alphabet:
             index_str = alphabet.index(s[char])
             new_str = new_str + alphabet_rotated[index_str]
 
-        if s[char] in alphabet_upercase:
+        elif s[char] in alphabet_upercase:
             index_str = alphabet_upercase.index(s[char])
             new_str = new_str + alphabet_upercase_rotated[index_str]
+
+        else:
+           new_str = new_str + s[char]
 
     return new_str
 
